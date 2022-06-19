@@ -11,6 +11,8 @@
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="EnemyTemplate" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 5
 script = ExtResource( 5 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
@@ -23,10 +25,14 @@ file_manager = NodePath("../FileManager")
 animation = NodePath("../Animation")
 
 [node name="DetectionArea" parent="." instance=ExtResource( 1 )]
+collision_mask = 20
 
 [node name="InRange" parent="." instance=ExtResource( 2 )]
+collision_mask = 20
 
 [node name="HitBox" parent="." instance=ExtResource( 6 )]
+collision_layer = 16
+collision_mask = 4
 stats = NodePath("../Stats")
 parent = NodePath("..")
 

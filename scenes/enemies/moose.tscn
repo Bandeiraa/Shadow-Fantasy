@@ -249,6 +249,7 @@ tracks/2/keys = {
 [node name="Moose" instance=ExtResource( 1 )]
 position = Vector2( 130, 132 )
 distance_threshold = 90
+collision_offset = Vector2( -17, 24 )
 
 [node name="Collision" parent="." index="0"]
 shape = SubResource( 7 )
@@ -258,16 +259,6 @@ texture = ExtResource( 2 )
 hframes = 30
 hitbox_x_position = -17.0
 hitbox = NodePath("../HitBox")
-
-[node name="DetectionArea" parent="." index="2"]
-visible = false
-
-[node name="InRange" parent="." index="3"]
-visible = false
-
-[node name="HitBox" parent="." index="4"]
-collision_radius = 20
-collision_offset = Vector2( -17, 24 )
 
 [node name="Animation" parent="." index="5"]
 playback_speed = 1.5

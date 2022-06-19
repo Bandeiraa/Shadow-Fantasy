@@ -98,6 +98,14 @@ texture={
 "svg/scale": 1.0
 }
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Interactable"
+2d_physics/layer_3="Player"
+2d_physics/layer_4="Npc"
+2d_physics/layer_5="Enemy"
+
 [physics]
 
 common/enable_pause_aware_picking=true
