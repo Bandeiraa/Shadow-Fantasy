@@ -28,7 +28,7 @@ func move() -> void:
 		velocity = direction * 90
 		
 		if distance.length() < distance_threshold:
-			velocity = Vector2.ZERO
+			attack = true
 			
 	else:
 		velocity = Vector2.ZERO

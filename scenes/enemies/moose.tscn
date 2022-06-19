@@ -1,6 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/template/enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/entities/enemies/moose/style_1/idle.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=7]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -244,11 +247,17 @@ tracks/2/keys = {
 }
 
 [node name="Moose" instance=ExtResource( 1 )]
-position = Vector2( 174, 137 )
+position = Vector2( 130, 132 )
 distance_threshold = 90
 
+[node name="Collision" parent="." index="0"]
+shape = SubResource( 7 )
+
 [node name="Texture" parent="." index="1"]
+texture = ExtResource( 2 )
 hframes = 30
+hitbox_x_position = -17.0
+hitbox = NodePath("../HitBox")
 
 [node name="DetectionArea" parent="." index="2"]
 visible = false
@@ -256,7 +265,11 @@ visible = false
 [node name="InRange" parent="." index="3"]
 visible = false
 
-[node name="Animation" parent="." index="4"]
+[node name="HitBox" parent="." index="4"]
+collision_radius = 20
+collision_offset = Vector2( -17, 24 )
+
+[node name="Animation" parent="." index="5"]
 playback_speed = 1.5
 anims/RESET = SubResource( 2 )
 anims/attack = SubResource( 1 )
@@ -265,5 +278,5 @@ anims/hurt = SubResource( 4 )
 anims/idle = SubResource( 5 )
 anims/run = SubResource( 6 )
 
-[node name="FileManager" parent="." index="5"]
+[node name="FileManager" parent="." index="6"]
 textures_path = "res://assets/entities/enemies/moose/"

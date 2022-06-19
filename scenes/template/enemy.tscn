@@ -1,15 +1,20 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/combat/detection/detection_area.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/combat/detection/in_range.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/management/file_manager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/enemies/moose/moose_texture.gd" type="Script" id=4]
 [ext_resource path="res://scripts/enemies/base/enemy.gd" type="Script" id=5]
+[ext_resource path="res://scenes/combat/hit_box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/combat/stats.tscn" type="PackedScene" id=7]
+
+[sub_resource type="CircleShape2D" id=1]
 
 [node name="EnemyTemplate" type="KinematicBody2D"]
 script = ExtResource( 5 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
 
 [node name="Texture" type="Sprite" parent="."]
 script = ExtResource( 4 )
@@ -21,6 +26,14 @@ animation = NodePath("../Animation")
 
 [node name="InRange" parent="." instance=ExtResource( 2 )]
 
+[node name="HitBox" parent="." instance=ExtResource( 6 )]
+stats = NodePath("../Stats")
+parent = NodePath("..")
+
 [node name="Animation" type="AnimationPlayer" parent="."]
 
 [node name="FileManager" parent="." instance=ExtResource( 3 )]
+
+[node name="Stats" parent="." instance=ExtResource( 7 )]
+speed = 90
+health = 150
