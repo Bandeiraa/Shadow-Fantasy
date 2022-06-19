@@ -38,3 +38,17 @@ func move_behavior(velocity: Vector2) -> void:
 	else:
 		animation.play("idle")
 		texture = load(textures_list[states.IDLE])
+		
+		
+func on_animation_finished(anim_name: String) -> void:
+	match anim_name:
+		"attack":
+			parent.attack = false
+			parent.set_physics_process(true)
+			
+		"hurt":
+			parent.hurt = false
+			parent.set_physics_process(true)
+			
+		"death":
+			print("Death")
