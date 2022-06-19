@@ -14,10 +14,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/combat/detection/detection_area.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "EnemyMain",
+"language": "GDScript",
+"path": "res://scripts/enemies/base/enemy.gd"
+}, {
 "base": "Sprite",
 "class": "EnemyTexture",
 "language": "GDScript",
-"path": "res://scripts/enemies/texture.gd"
+"path": "res://scripts/enemies/base/texture.gd"
 }, {
 "base": "Node",
 "class": "FileManager",
@@ -36,6 +41,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "DetectionArea": "",
+"EnemyMain": "",
 "EnemyTexture": "",
 "FileManager": "",
 "InRange": "",
@@ -46,6 +52,15 @@ _global_script_class_icons={
 
 config/name="Shadow Fantasy"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/test_width=1280
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 

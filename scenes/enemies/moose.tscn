@@ -244,6 +244,8 @@ tracks/2/keys = {
 }
 
 [node name="Moose" instance=ExtResource( 1 )]
+position = Vector2( 174, 137 )
+distance_threshold = 90
 
 [node name="Texture" parent="." index="1"]
 hframes = 30
@@ -262,3 +264,6 @@ anims/death = SubResource( 3 )
 anims/hurt = SubResource( 4 )
 anims/idle = SubResource( 5 )
 anims/run = SubResource( 6 )
+
+[node name="FileManager" parent="." index="5"]
+textures_path = "res://assets/entities/enemies/moose/"

@@ -3,10 +3,6 @@ class_name FileManager
 
 export(String) var textures_path
 
-func _ready() -> void:
-	randomize()
-	
-	
 func get_files_in_path() -> Array:
 	var assets_list: Array = []
 	var sub_folders: Array = get_files(textures_path)

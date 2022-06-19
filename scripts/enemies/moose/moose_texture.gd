@@ -17,13 +17,6 @@ func animate(velocity: Vector2) -> void:
 		move_behavior(velocity)
 		
 		
-func verify_direction(direction: float) -> void:
-	if direction > 0:
-		flip_h = false
-	elif direction < 0:
-		flip_h = true
-		
-		
 func action_behavior() -> void:
 	if parent.death:
 		animation.play("death")
