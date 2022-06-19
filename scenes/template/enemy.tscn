@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/combat/detection/detection_area.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/combat/detection/in_range.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/management/file_manager.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/entities/enemies/moose/style_1/attack.png" type="Texture" id=4]
 
 [node name="EnemyTemplate" type="KinematicBody2D"]
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 
 [node name="Texture" type="Sprite" parent="."]
+texture = ExtResource( 4 )
 
 [node name="DetectionArea" parent="." instance=ExtResource( 1 )]
 
