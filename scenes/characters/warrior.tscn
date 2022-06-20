@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/combat/hit_box.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/combat/stats.tscn" type="PackedScene" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://assets/entities/characters/warrior/swing_2.png" type="Texture" id=6]
 [ext_resource path="res://assets/entities/characters/warrior/hurt.png" type="Texture" id=7]
 [ext_resource path="res://assets/entities/characters/warrior/death.png" type="Texture" id=8]
+[ext_resource path="res://scripts/player/warrior.gd" type="Script" id=9]
+[ext_resource path="res://scripts/player/warrior_texture.gd" type="Script" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -421,14 +423,17 @@ tracks/4/keys = {
 }
 
 [node name="Warrior" type="KinematicBody2D"]
+script = ExtResource( 9 )
 
 [node name="Texture" type="Sprite" parent="."]
 position = Vector2( 2, 0 )
 texture = ExtResource( 3 )
 hframes = 16
+script = ExtResource( 10 )
+parent = NodePath("..")
+animation = NodePath("../Animation")
 
 [node name="Camera" type="Camera2D" parent="."]
-current = true
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 drag_margin_left = 0.4
@@ -456,3 +461,7 @@ stats = NodePath("../Stats")
 parent = NodePath("..")
 
 [node name="Stats" parent="." instance=ExtResource( 2 )]
+speed = 120
+health = 35
+
+[connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]
