@@ -39,7 +39,5 @@ parent = NodePath("..")
 [node name="FileManager" parent="." instance=ExtResource( 3 )]
 
 [node name="Stats" parent="." instance=ExtResource( 7 )]
-speed = 90
-health = 150
 
 [connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]

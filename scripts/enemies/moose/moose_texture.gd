@@ -27,7 +27,7 @@ func action_behavior() -> void:
 		texture = load(textures_list[states.HURT])
 		
 	elif parent.attack:
-		animation.play("attack")
+		animation.play("attack" + attack_suffix)
 		texture = load(textures_list[states.ATTACK])
 		
 		
@@ -42,9 +42,11 @@ func move_behavior(velocity: Vector2) -> void:
 		
 func on_animation_finished(anim_name: String) -> void:
 	match anim_name:
-		"attack":
+		"attack_left":
 			parent.attack = false
-			parent.set_physics_process(true)
+			
+		"attack_right":
+			parent.attack = false
 			
 		"hurt":
 			parent.hurt = false

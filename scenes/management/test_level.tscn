@@ -9,3 +9,4 @@
 position = Vector2( 30, 185 )
 
 [node name="Moose" parent="." instance=ExtResource( 1 )]
+distance_threshold = 60
