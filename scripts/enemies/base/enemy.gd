@@ -28,9 +28,9 @@ func move() -> void:
 		var distance: Vector2 = target.global_position - global_position
 		var direction = distance.normalized()
 		velocity = direction * stats.speed
-		
 		if distance.length() < distance_threshold:
 			attack = true
+			velocity = Vector2.ZERO
 			
 	else:
 		velocity = Vector2.ZERO

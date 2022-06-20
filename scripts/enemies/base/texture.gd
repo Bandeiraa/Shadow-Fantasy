@@ -15,11 +15,11 @@ func _ready() -> void:
 func verify_direction(direction: float) -> void:
 	if direction > 0:
 		flip_h = false
-		position = parent.collision_offset.x
+		position.x = -parent.collision_offset.x
 		
 	elif direction < 0:
 		flip_h = true
-		position = -parent.collision_offset.x
+		position.x = parent.collision_offset.x
 		
 		
 func on_animation_finished(_anim_name: String) -> void:

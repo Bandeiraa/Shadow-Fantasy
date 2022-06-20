@@ -18,6 +18,8 @@ var attack_list: Array = [
 var attack_index: int = 0
 var current_attack: String = attack_list[attack_index]
 
+export(String) var group_name
+
 func _physics_process(_delta: float) -> void:
 	move()
 	handle_attack()

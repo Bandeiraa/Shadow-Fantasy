@@ -34,3 +34,5 @@ func body_detection_exited(body):
 		
 	if not bodies.empty():
 		target_body = bodies[randi() % bodies.size()]
+	else:
+		target_body = null

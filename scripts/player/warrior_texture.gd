@@ -15,8 +15,10 @@ func animate(velocity: Vector2) -> void:
 func verify_direction(direction: float) -> void:
 	if direction > 0:
 		flip_h = false
+		position.x = 2
 	elif direction < 0:
 		flip_h = true
+		position.x = -2
 		
 		
 func action_behavior() -> void:
