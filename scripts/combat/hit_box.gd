@@ -22,10 +22,11 @@ func define_collision_radius() -> void:
 	
 	
 func update_health(area) -> void:
-	#health -= area.damage
-	if health <= 0:
-		parent.death = true
-		return
-		
-	#parent.hurt = true
-	#Knockback
+	if area.get_parent().group_name != parent.group_name:
+		health -= area.damage
+		if health <= 0:
+			parent.death = true
+			return
+			
+		parent.hurt = true
+		#Knockback

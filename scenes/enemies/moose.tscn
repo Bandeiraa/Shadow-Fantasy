@@ -297,27 +297,31 @@ collision_offset = Vector2( -17, 24 )
 
 [node name="Collision" parent="." index="0"]
 visible = false
-position = Vector2( -17, 24 )
+position = Vector2( 0, 24 )
 shape = SubResource( 7 )
 
 [node name="Texture" parent="." index="1"]
+position = Vector2( 17, 0 )
 texture = ExtResource( 2 )
 hframes = 30
 script = ExtResource( 3 )
+parent = NodePath("..")
+file_manager = NodePath("../FileManager")
+animation = NodePath("../Animation")
 
 [node name="DetectionArea" parent="." index="2"]
 visible = false
-position = Vector2( -17, 24 )
-collision_radius = 360
+position = Vector2( 0, 24 )
+collision_radius = 180
 
 [node name="InRange" parent="." index="3"]
 visible = false
-position = Vector2( -17, 24 )
-collision_radius = 420
+position = Vector2( 0, 24 )
+collision_radius = 300
 
 [node name="HitBox" parent="." index="4"]
 visible = false
-position = Vector2( -17, 24 )
+position = Vector2( 0, 24 )
 collision_radius = 20
 
 [node name="Animation" parent="." index="5"]
