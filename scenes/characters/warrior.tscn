@@ -13,7 +13,7 @@
 [ext_resource path="res://scripts/combat/hurt_box.gd" type="Script" id=11]
 [ext_resource path="res://scripts/player/warrior_stats.gd" type="Script" id=12]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=12]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -786,9 +786,8 @@ drag_margin_left = 0.4
 drag_margin_right = 0.4
 
 [node name="Collision" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, 24 )
-shape = SubResource( 1 )
+shape = SubResource( 12 )
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 playback_speed = 1.25

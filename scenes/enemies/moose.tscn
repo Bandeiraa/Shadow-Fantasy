@@ -478,6 +478,7 @@ animation = NodePath("../Animation")
 [node name="DetectionArea" parent="." index="2"]
 visible = false
 position = Vector2( 0, 24 )
+change_seek_target = true
 collision_radius = 240
 
 [node name="InRange" parent="." index="3"]
