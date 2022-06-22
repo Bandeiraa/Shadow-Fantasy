@@ -505,9 +505,9 @@ textures_path = "res://assets/entities/enemies/moose/"
 
 [node name="Stats" parent="." index="7"]
 script = ExtResource( 5 )
-speed = 75
+speed = 60
 health = 150
-damage = 50
+damage = 30
 hurtbox = NodePath("../HurtBox")
 
 [node name="HurtBox" type="Area2D" parent="." index="8"]

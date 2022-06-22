@@ -59,3 +59,6 @@ func on_animation_finished(anim_name: String) -> void:
 		parent.attack = false
 		parent.attack_index += 1
 		parent.set_physics_process(true)
+	elif anim_name == "hurt":
+		parent.hurt = false
+		parent.set_physics_process(true)
