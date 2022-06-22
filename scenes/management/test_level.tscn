@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://resources/tile/transparent_grass.tres" type="TileSet" id=1]
 [ext_resource path="res://scenes/characters/warrior.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://resources/tile/decoration.tres" type="TileSet" id=6]
 [ext_resource path="res://resources/tile/normal_grass.tres" type="TileSet" id=7]
 [ext_resource path="res://scripts/management/debugger_level.gd" type="Script" id=8]
+[ext_resource path="res://scenes/interface/interface.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/interactables/teleport/portal.tscn" type="PackedScene" id=10]
 
 [node name="Level" type="Node2D"]
@@ -103,3 +104,5 @@ tile_data = PoolIntArray( 196609, 16, 0, 262155, 16, 0, 458758, 18, 0, 720899, 1
 
 [node name="Portal" parent="Sort" instance=ExtResource( 10 )]
 position = Vector2( 101, 444 )
+
+[node name="Interface" parent="." instance=ExtResource( 9 )]

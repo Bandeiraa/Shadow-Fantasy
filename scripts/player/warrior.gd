@@ -1,6 +1,7 @@
 extends KinematicBody2D
 class_name Warrior
 
+onready var animation: AnimationPlayer = get_node("Animation")
 onready var sprite: Sprite = get_node("Texture")
 onready var stats: Node = get_node("Stats")
 
@@ -41,3 +42,8 @@ func handle_attack() -> void:
 		attack = true
 		if attack_index == attack_list.size():
 			attack_index = 0
+			
+			
+func freeze(state: bool) -> void:
+	animation.play("idle")
+	set_physics_process(state)
